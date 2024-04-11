@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Task from './Task';
 
 function TaskList() {
 
@@ -21,9 +22,9 @@ function TaskList() {
         <button onClick={guardar}>Guardar</button>
         <ul>
             {
-                tasks.map((element, index) => {
-                    return <li key={index}>{element}</li>
-                })
+                tasks.map((element) => (
+                    <Task key={element.id} element={element} />
+                ))
             }
         </ul>
     </div>
